@@ -4,7 +4,7 @@
 
 ## HLAL KAWTAR
 
-<img src="WhatsApp Image 2025-10-29 at 11.37.52.jpeg" style="height:592px;margin-right:562px"/>
+<img src="WhatsApp Image 2025-10-29 at 11.37.52.jpeg" style="height:1092px;margin-right:1062px"/>
 
 ## École Nationale de Commerce et de Gestion (ENCG) - 4ème Année
 
