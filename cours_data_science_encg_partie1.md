@@ -179,7 +179,7 @@ import matplotlib.pyplot as plt  #representation graphique
 import seaborn as sns  #statistique
 
 # Charger un dataset en ligne (exemple : ventes d'une entreprise)
-url = "https://raw.githubusercontent.com/datasets/gdp/master/data/gdp.csv"
+url = "https://raw.githubusercontent.com/datasets/gdp/master/data/gdp.csv"  #jeux de données
 df = pd.read_csv(url)
 
 # Afficher les premières lignes
