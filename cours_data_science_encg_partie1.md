@@ -173,10 +173,10 @@ Les statistiques descriptives résument et décrivent les principales caractéri
 **Code Python - Statistiques descriptives :**
 
 ```python
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
+import pandas as pd  
+import numpy as np #calcul scientifique
+import matplotlib.pyplot as plt  #representation graphique
+import seaborn as sns  #statistique
 
 # Charger un dataset en ligne (exemple : ventes d'une entreprise)
 url = "https://raw.githubusercontent.com/datasets/gdp/master/data/gdp.csv"
