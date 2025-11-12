@@ -50,6 +50,24 @@ Les données sont structurées dans un objet comportant plusieurs attributs util
 - Ce code permet de charger immédiatement les données pour les analyser, modéliser ou visualiser dans un environnement Python.
 - Les sorties des commandes `print(...)` sont essentielles pour comprendre la structure du jeu de données et préparer une analyse ou modélisation machine learning adaptée.
 
+
+```python
+from ucimlrepo import fetch_ucirepo 
+  
+# fetch dataset 
+tic_tac_toe_endgame = fetch_ucirepo(id=101) 
+  
+# data (as pandas dataframes) 
+X = tic_tac_toe_endgame.data.features 
+y = tic_tac_toe_endgame.data.targets 
+  
+# metadata 
+print(tic_tac_toe_endgame.metadata) 
+  
+# variable information 
+print(tic_tac_toe_endgame.variables) 
+
+
 ## Détails techniques principaux :
 
 Type : Multivarié, catégoriel
@@ -65,3 +83,53 @@ Variable cible : "class", indiquant victoire ("positive") ou non ("negative") po
 Pas de valeurs manquantes dans les données
 
 Algorithmes classiques (ID3, CN2, IB1, CITRE) donnent de bons résultats sur ce jeu de données
+
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Set a style for the plots
+sns.set_style('whitegrid')
+
+# 1. Distribution of the target variable (win/loss for 'x')
+plt.figure(figsize=(6, 4))
+sns.countplot(data=y, x='class', palette='viridis')
+plt.title('Distribution of Game Outcomes (Win for X)')
+plt.xlabel('Outcome')
+plt.ylabel('Count')
+plt.show()
+
+
+## Distribution of Each Board Position
+Let's visualize the distribution of 'x', 'o', or 'b' (blank) for each square on the Tic-Tac-Toe board. This helps us understand common patterns in the endgame configurations.
+
+
+```python
+fig, axes = plt.subplots(nrows=3, ncols=3, figsize=(15, 15), sharey=True)
+axes = axes.flatten()
+
+for i, column in enumerate(X.columns):
+    sns.countplot(data=X, x=column, ax=axes[i], palette='magma', order=['x', 'o', 'b'])
+    axes[i].set_title(f'Distribution of {column}')
+    axes[i].set_xlabel('')
+    axes[i].set_ylabel('Count')
+
+plt.tight_layout()
+plt.show()
+
+## Relationship between a Feature and the Target
+Let's look at how one specific square's state relates to the final game outcome. We'll examine the 'middle-middle-square' as an example.
+
+```python
+# Combine X and y for easier plotting of relationships
+df_combined = X.copy()
+df_combined['class'] = y['class']
+
+plt.figure(figsize=(8, 6))
+sns.countplot(data=df_combined, x='middle-middle-square', hue='class', palette='viridis')
+plt.title('Game Outcome by Middle-Middle Square State')
+plt.xlabel('Middle-Middle Square State')
+plt.ylabel('Count')
+plt.legend(title='Outcome')
+plt.show()
+
