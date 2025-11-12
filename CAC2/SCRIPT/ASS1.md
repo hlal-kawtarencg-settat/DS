@@ -66,7 +66,7 @@ print(tic_tac_toe_endgame.metadata)
   
 # variable information 
 print(tic_tac_toe_endgame.variables) 
-
+```
 
 ## Détails techniques principaux :
 
@@ -98,7 +98,7 @@ plt.title('Distribution of Game Outcomes (Win for X)')
 plt.xlabel('Outcome')
 plt.ylabel('Count')
 plt.show()
-
+```
 
 ## Distribution of Each Board Position
 Let's visualize the distribution of 'x', 'o', or 'b' (blank) for each square on the Tic-Tac-Toe board. This helps us understand common patterns in the endgame configurations.
@@ -116,6 +116,7 @@ for i, column in enumerate(X.columns):
 
 plt.tight_layout()
 plt.show()
+```
 
 ## Relationship between a Feature and the Target
 Let's look at how one specific square's state relates to the final game outcome. We'll examine the 'middle-middle-square' as an example.
@@ -132,4 +133,5 @@ plt.xlabel('Middle-Middle Square State')
 plt.ylabel('Count')
 plt.legend(title='Outcome')
 plt.show()
+```
 
