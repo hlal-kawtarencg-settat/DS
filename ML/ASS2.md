@@ -94,6 +94,10 @@ plt.figure()
 corr = X.corr()
 sns.heatmap(corr)
 ```
+<img src="image1.png" style="height:552px;margin-right:529px"/>
+<img src="image2.png" style="height:643px;margin-right:535px"/>
+
+
 ## classification des k
 
 
