@@ -1,4 +1,4 @@
-# Assignement DE SCIENCE DES DONNÉES
+# Assignment DE SCIENCE DES DONNÉES
 
 ## HLAL KAWTAR
 ## N° 21008814
@@ -119,7 +119,9 @@ plt.tight_layout()
 plt.show()
 ```
 <img src="téléchargement (1).png" style="height:540px;margin-right:393px"/>
+
 ## Relationship between a Feature and the Target
+
 Let's look at how one specific square's state relates to the final game outcome. We'll examine the 'middle-middle-square' as an example.
 
 ```python
