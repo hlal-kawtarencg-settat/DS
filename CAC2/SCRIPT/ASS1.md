@@ -99,7 +99,7 @@ plt.xlabel('Outcome')
 plt.ylabel('Count')
 plt.show()
 ```
-<img src="téléchargement.png" style="height:540px;margin-right:393px"/>
+<img src="imagee.png" style="height:540px;margin-right:393px"/>
 
 ## Distribution of Each Board Position
 Let's visualize the distribution of 'x', 'o', or 'b' (blank) for each square on the Tic-Tac-Toe board. This helps us understand common patterns in the endgame configurations.
@@ -118,7 +118,7 @@ for i, column in enumerate(X.columns):
 plt.tight_layout()
 plt.show()
 ```
-<img src="téléchargement (1).png" style="height:540px;margin-right:393px"/>
+<img src="imaage.png" style="height:1489px;margin-right:1489px"/>
 
 ## Relationship between a Feature and the Target
 
@@ -137,4 +137,4 @@ plt.ylabel('Count')
 plt.legend(title='Outcome')
 plt.show()
 ```
-<img src="téléchargement (2).png" style="height:540px;margin-right:393px"/>
+<img src="imaagee.png" style="height:695px;margin-right:547px"/>
