@@ -150,3 +150,91 @@ Xa_n = sc.transform(Xa)
 Xv_n = sc.transform(Xv)
 ```
 
+## Task
+Generate and explain the following visualizations: a boxplot of the features in `X`, a heatmap of the correlation matrix of `X`, a countplot of the binarized target variable `Y`, and a line plot showing the training and validation error rates of the K-Nearest Neighbors (KNN) model as a function of `k`. Highlight key insights from each visualization regarding the data and the model's performance.
+
+## Visualiser les distributions des caractéristiques (Boxplot)
+
+### Subtask:
+Générer un boxplot des caractéristiques du DataFrame X pour visualiser leurs distributions.
+
+## Visualiser la distribution de la variable cible binarisée
+
+### Subtask:
+Créer un graphique (countplot) pour montrer la répartition des classes 0 et 1 dans la variable cible binarisée `Y`.
+
+**Reasoning**:
+To visualize the distribution of the binarized target variable `Y`, I will create a countplot using seaborn and matplotlib as per the instructions.
+
+```python
+plt.figure(figsize=(6, 4))
+sns.countplot(x=Y, palette="viridis")
+plt.title('Distribution of Binarized Wine Quality (0: Bad, 1: Good)')
+plt.xlabel('Wine Quality')
+plt.ylabel('Count')
+plt.show()
+```
+<img src="image3.png" style="height:549px;margin-right:393px"/>
+
+**Reasoning**:
+The previous code generated a `FutureWarning` because `palette` was used without `hue` in `sns.countplot`. To fix this, I will explicitly set `hue=Y` and `legend=False` to align with the recommended usage in the warning message, ensuring the plot is generated correctly without warnings.
+
+```python
+plt.figure(figsize=(6, 4))
+sns.countplot(x=Y, hue=Y, palette="viridis", legend=False)
+plt.title('Distribution of Binarized Wine Quality (0: Bad, 1: Good)')
+plt.xlabel('Wine Quality')
+plt.ylabel('Count')
+plt.show()
+```
+<img src="image4.png" style="height:549px;margin-right:393px"/>
+
+## Visualiser les erreurs d'entraînement et de validation pour KNN
+
+### Subtask:
+Tracer un graphique en ligne montrant l'évolution des taux d'erreur d'entraînement (`error_train`) et de validation (`error_val`) en fonction des différentes valeurs de `k` (`k_vector`). Cela permettra d'identifier visuellement le `k` optimal.
+**Reasoning**:
+To visualize the training and validation error rates as a function of k, I will use `matplotlib.pyplot` to create a line plot as specified in the instructions. This will allow for the visual identification of the optimal `k`.
+
+```python
+plt.figure(figsize=(10, 6))
+plt.plot(k_vector, error_train, label='Training Error')
+plt.plot(k_vector, error_val, label='Validation Error')
+plt.title('KNN Training and Validation Error vs. k')
+plt.xlabel('k')
+plt.ylabel('Error Rate')
+plt.legend()
+plt.grid(True)
+plt.show()
+```
+<img src="image5.png" style="height:866px;margin-right:547px"/>
+
+## Visualiser la matrice de corrélation (Heatmap)
+
+### Subtask:
+Afficher une heatmap de la matrice de corrélation des caractéristiques dans `X` pour identifier les relations linéaires entre elles.
+**Reasoning**:
+To visualize the correlation matrix of the features in `X`, I will use `seaborn.heatmap`. The correlation matrix `corr` has already been computed in a previous step, so I will directly plot it with an appropriate title.
+
+```python
+plt.figure(figsize=(12, 10))
+sns.heatmap(corr, annot=True, cmap='coolwarm', fmt=".2f", linewidths=.5)
+plt.title('Correlation Matrix of Features in X')
+plt.show()
+```
+<img src="image6.png" style="height:1032px;margin-right:952px"/>
+
+## Summary:
+
+### Data Analysis Key Findings
+
+*   **Feature Distributions (Boxplot of `X`)**: The boxplot visualization was previously generated, showing the distribution, spread, and potential outliers for each feature in the dataset. This helps in understanding individual feature characteristics and identifying any needing scaling or outlier treatment.
+*   **Binarized Target Variable Distribution (Countplot of `Y`)**: The target variable `Y` (wine quality, binarized into 0: Bad, 1: Good) was visualized. This plot reveals the class balance or imbalance, which is crucial for model evaluation strategies.
+*   **KNN Training and Validation Error Rates (Line Plot)**: A line plot illustrated the training and validation error rates of the K-Nearest Neighbors (KNN) model across different values of `k`. This visualization is critical for identifying the optimal `k` value where the validation error is minimized, indicating the best balance between bias and variance for the model on this dataset.
+*   **Feature Correlation Matrix (Heatmap)**: A heatmap of the correlation matrix for features in `X` was displayed. This visualization highlights linear relationships between features, allowing for the identification of highly correlated features that might suggest multicollinearity or redundancy, or features that are largely independent.
+
+### Insights or Next Steps
+
+*   **Model Optimization**: The KNN error plot provides a clear visual guide to select the optimal `k` value. The `k` that minimizes the validation error rate should be chosen for the final KNN model to achieve the best generalization performance.
+*   **Feature Engineering/Selection**: The correlation heatmap offers insights into feature dependencies. Highly correlated features might be considered for dimensionality reduction techniques (e.g., PCA) or selective removal to improve model efficiency and reduce multicollinearity, while features with low correlation to the target might be re-evaluated for their importance.
+
