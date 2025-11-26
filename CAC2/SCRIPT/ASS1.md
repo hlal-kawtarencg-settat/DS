@@ -118,7 +118,7 @@ for i, column in enumerate(X.columns):
 plt.tight_layout()
 plt.show()
 ```
-<img src="imaage.png" style="height:1489px;margin-right:1489px"/>
+<img src="imaage.png" style="height:540px;margin-right:393px"/>
 
 ## Relationship between a Feature and the Target
 
@@ -137,4 +137,4 @@ plt.ylabel('Count')
 plt.legend(title='Outcome')
 plt.show()
 ```
-<img src="imaagee.png" style="height:695px;margin-right:547px"/>
+<img src="imaagee.png" style="height:540px;margin-right:393px"/>
