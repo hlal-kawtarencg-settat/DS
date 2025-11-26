@@ -95,8 +95,8 @@ plt.figure()
 corr = X.corr()
 sns.heatmap(corr)
 ```
-<img src="image1.png" style="height:552px;margin-right:529px"/>
-<img src="image2.png" style="height:643px;margin-right:535px"/>
+<img src="image1.png" style="height:540px;margin-right:393px"/>
+<img src="image2.png" style="height:540px;margin-right:393px"/>
 
 
 ## classification des k
@@ -175,7 +175,7 @@ plt.xlabel('Wine Quality')
 plt.ylabel('Count')
 plt.show()
 ```
-<img src="image3.png" style="height:549px;margin-right:393px"/>
+<img src="image3.png" style="height:540px;margin-right:393px"/>
 
 **Reasoning**:
 The previous code generated a `FutureWarning` because `palette` was used without `hue` in `sns.countplot`. To fix this, I will explicitly set `hue=Y` and `legend=False` to align with the recommended usage in the warning message, ensuring the plot is generated correctly without warnings.
@@ -188,7 +188,7 @@ plt.xlabel('Wine Quality')
 plt.ylabel('Count')
 plt.show()
 ```
-<img src="image4.png" style="height:549px;margin-right:393px"/>
+<img src="image4.png" style="height:540px;margin-right:393px"/>
 
 ## Visualiser les erreurs d'entraînement et de validation pour KNN
 
@@ -208,7 +208,7 @@ plt.legend()
 plt.grid(True)
 plt.show()
 ```
-<img src="image5.png" style="height:866px;margin-right:547px"/>
+<img src="image5.png" style="height:540px;margin-right:393px"/>
 
 ## Visualiser la matrice de corrélation (Heatmap)
 
@@ -223,7 +223,7 @@ sns.heatmap(corr, annot=True, cmap='coolwarm', fmt=".2f", linewidths=.5)
 plt.title('Correlation Matrix of Features in X')
 plt.show()
 ```
-<img src="image6.png" style="height:1032px;margin-right:952px"/>
+<img src="image6.png" style="height:540px;margin-right:393px"/>
 
 ## Summary:
 
