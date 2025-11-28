@@ -31,7 +31,11 @@ warnings.filterwarnings("ignore")
 ```
 
 **pandas (pd)** : Bibliothèque pour la manipulation de données structurées (tableaux, DataFrames)
+
 **numpy (np)** : Bibliothèque pour les calculs numériques et les opérations sur les matrices
+
 **matplotlib.pyplot (plt)** : Outil de visualisation pour créer des graphiques et des diagrammes
+
 **seaborn (sns)** : Bibliothèque de visualisation statistique construite sur matplotlib, offrant des graphiques plus sophistiqués
+
 **warnings.filterwarnings("ignore")** : Supprime les avertissements pour une sortie plus propre
