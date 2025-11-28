@@ -18,3 +18,20 @@ Chacune des sept colonnes de ce jeu de données, qui comprend les réponses de 5
 ## Contexte
 Le jeu de données se concentre sur la santé mentale et le bien-être des étudiants. Il facilite l'analyse de la manière dont les niveaux de stress des étudiants sont influencés par les choix de mode de vie (tels que les loisirs et les habitudes de sommeil) et la pression académique. Il peut être utilisé par des chercheurs ou des analystes de données pour étudier les corrélations et les schémas de stress, ainsi que pour faire des recommandations sur les moyens d'améliorer la santé mentale des étudiants.
 
+## Phase de Préparation et Configuration
+## Importation des bibliothèques
+
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import warnings
+warnings.filterwarnings("ignore")
+```
+
+**pandas (pd)** : Bibliothèque pour la manipulation de données structurées (tableaux, DataFrames)
+**numpy (np)** : Bibliothèque pour les calculs numériques et les opérations sur les matrices
+**matplotlib.pyplot (plt)** : Outil de visualisation pour créer des graphiques et des diagrammes
+**seaborn (sns)** : Bibliothèque de visualisation statistique construite sur matplotlib, offrant des graphiques plus sophistiqués
+**warnings.filterwarnings("ignore")** : Supprime les avertissements pour une sortie plus propre
