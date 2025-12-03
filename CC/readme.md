@@ -1,4 +1,4 @@
-# COURS DE SCIENCE DES DONNÉES
+# La Mortalité liée à la Covid-19 en France
 
 # A.LARHLIMI
 
